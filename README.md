@@ -1,4 +1,4 @@
-# vuetify-nuxt
+# wp-nuxt
 
 > Nuxt.js + Vuetify.js project
 
