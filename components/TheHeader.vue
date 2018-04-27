@@ -4,7 +4,7 @@
       <div class="columns is-gapless">
         <div class="header-title column">
           <h1>
-            <nuxt-link to="/" exact>{{meta.name}}</nuxt-link>
+            <a href="/" title="">{{meta.name}}</a>
           </h1>
         </div>
         <div class="header-nav column">
