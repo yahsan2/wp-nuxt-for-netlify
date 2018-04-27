@@ -33,7 +33,7 @@
   margin-left: auto
   margin-right: auto
   article + article
-    border-top: 1px dotted lighten($primary, 20%)
+    border-top: 1px dotted lighten($color-primary, 20%)
     margin-top: 32px
     padding-top: 32px
 </style>

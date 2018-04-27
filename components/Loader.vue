@@ -34,7 +34,7 @@
     transform: scale(1.0)
 
 .infinite-status-prompt
-  color: rgba($primary, .65)
+  color: rgba($color-primary, .65)
   font-size: 0.8rem
   font-family: 'Roboto', sans-serif
   margin: 64px auto

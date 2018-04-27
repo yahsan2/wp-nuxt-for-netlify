@@ -112,12 +112,12 @@ export default {
 
         &::before
           content: ', '
-          color: $primary
+          color: $color-primary
           left: -7px
           position: absolute
 
     a:hover
-      color: $accent
+      color: $color-primary
 
   .featured-image
     min-height: 440px
