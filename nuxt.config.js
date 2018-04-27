@@ -68,9 +68,10 @@ module.exports = {
     }
   },
   generate: {
+    interval: 1000,
     routes () {
       return Promise.all([
-        axios.get('http://nishida.lol/wp-json/wp/v2/posts?per_page=10'),
+        axios.get('http://nishida.lol/wp-json/wp/v2/posts?per_page=100'),
         axios.get('http://nishida.lol/wp-json/wp/v2/pages?per_page=100')
       ]).then((data) => {
         const posts = data[0]
