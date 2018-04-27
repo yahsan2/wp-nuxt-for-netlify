@@ -52,7 +52,7 @@ export default {
 .header-nav
   overflow-x auto
   -webkit-overflow-scrolling touch
-  flex-grow: 3
+  flex-grow: 2
   nav
     display block
     ul
