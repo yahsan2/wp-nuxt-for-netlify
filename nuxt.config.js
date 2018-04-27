@@ -1,8 +1,9 @@
 const nodeExternals = require('webpack-node-externals')
 const resolve = (dir) => require('path').join(__dirname, dir)
+const axios = require('axios')
 
 module.exports = {
-  mode: 'spa',
+  // mode: 'spa',
   /*
   ** Headers of the page
   */
@@ -66,7 +67,23 @@ module.exports = {
       // }
     }
   },
+  generate: {
+    routes () {
+      return Promise.all([
+        axios.get('http://nishida.lol/wp-json/wp/v2/posts?per_page=100'),
+        axios.get('http://nishida.lol/wp-json/wp/v2/pages?per_page=100'),
+      ]).then((data) => {
+        const posts = data[0]
+        const pages = data[1]
 
+        return posts.data.map((post) => {
+          return '/post/' + post.slug
+        }).concat(pages.data.map((page) => {
+          return page.slug
+        }))
+      })
+    }
+  },
   plugins: [
     { src: '~plugins/vue-lazyload', ssr: false },
     // { src: '~plugins/web-font-loader', ssr: false },
