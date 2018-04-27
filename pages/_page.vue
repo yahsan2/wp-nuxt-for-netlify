@@ -82,7 +82,7 @@ export default {
       return this.article.author || {}
     },
     featuredImage () {
-      if (this.article && this.article.images[0]) {
+      if (this.article && this.article.images && this.article.images[0]) {
         const featuredImage = this.article.images[0]
         return featuredImage.sizes.large || featuredImage.sizes.full || false
       } else {
