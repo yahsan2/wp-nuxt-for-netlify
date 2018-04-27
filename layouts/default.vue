@@ -60,10 +60,6 @@ import TheFooter from '../components/TheFooter'
 import Loader from '~/components/Loader'
 
 export default {
-  async asyncData ({ app, store, params, route }) {
-    console.log('test')
-    // store.commit('setCurrentQuery', query)
-  },
   data () {
     return {
       clipped: false,
@@ -83,6 +79,31 @@ export default {
     TheHeader,
     TheFooter,
     Loader
+  },
+  methods: {
+    async defaultPostCache () {
+      const query = {
+        orderby: 'date',
+        per_page: 10,
+        page: 1,
+        _embed: 1
+      }
+      console.log('this.$store.state.cachePages[route.path]')
+      console.log(this.$store.state.cachePages['/'])
+
+      if (!this.$store.state.cachePages['/']) {
+        const posts = await this.$api.get('/posts', query)
+        this.$store.commit('setCachePages', {
+          path: '/',
+          posts: posts.data
+        })
+        this.$store.commit('setCachePosts', posts.data)
+      }
+      console.log(this.$store.state.cachePages['/'])
+    }
+  },
+  mounted () {
+    this.defaultPostCache()
   }
 }
 </script>
