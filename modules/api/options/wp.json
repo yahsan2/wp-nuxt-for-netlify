@@ -8,62 +8,62 @@
     },
     "post": {
       "get": {
-        "/posts": "/main/v2/posts",
-        "/posts/:id": "/main/v2/posts"
+        "/posts": "/wp/v2/posts",
+        "/posts/:id": "/wp/v2/posts"
       },
       "post": {
-        "/posts": "/main/v2/posts"
+        "/posts": "/wp/v2/posts"
       },
       "put": {
-        "/posts/:id": "/main/v2/posts"
+        "/posts/:id": "/wp/v2/posts"
       },
       "delete": {
-        "/posts/:id": "/main/v2/posts"
+        "/posts/:id": "/wp/v2/posts"
       }
     },
     "category": {
       "get": {
-        "/categories": "/main/v2/categories",
-        "/categories/:id": "/main/v2/categories"
+        "/categories": "/wp/v2/categories",
+        "/categories/:id": "/wp/v2/categories"
       },
       "post": {
-        "/categories": "/main/v2/categories"
+        "/categories": "/wp/v2/categories"
       },
       "put": {
-        "/categories/:id": "/main/v2/categories"
+        "/categories/:id": "/wp/v2/categories"
       },
       "delete": {
-        "/categories/:id": "/main/v2/categories"
+        "/categories/:id": "/wp/v2/categories"
       }
     },
     "page": {
       "get": {
-        "/pages": "/main/v2/pages",
-        "/pages/:id": "/main/v2/pages"
+        "/pages": "/wp/v2/pages",
+        "/pages/:id": "/wp/v2/pages"
       },
       "post": {
-        "/pages": "/main/v2/pages"
+        "/pages": "/wp/v2/pages"
       },
       "put": {
-        "/pages/:id": "/main/v2/pages"
+        "/pages/:id": "/wp/v2/pages"
       },
       "delete": {
-        "/pages/:id": "/main/v2/pages"
+        "/pages/:id": "/wp/v2/pages"
       }
     },
     "sale": {
       "get": {
-        "/posts": "/main/v2/posts",
-        "/posts/:id": "/main/v2/posts"
+        "/posts": "/wp/v2/posts",
+        "/posts/:id": "/wp/v2/posts"
       },
       "post": {
-        "/posts": "/main/v2/posts"
+        "/posts": "/wp/v2/posts"
       },
       "put": {
-        "/posts/:id": "/main/v2/posts"
+        "/posts/:id": "/wp/v2/posts"
       },
       "delete": {
-        "/posts/:id": "/main/v2/posts"
+        "/posts/:id": "/wp/v2/posts"
       }
     }
   },

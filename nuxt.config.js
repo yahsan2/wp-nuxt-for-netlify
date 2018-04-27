@@ -80,7 +80,7 @@ module.exports = {
     }],
     ['~/modules/api', {
       'config': './options/wp.json',
-      'baseURI': 'https://greenz.jp/wp-json',
+      'baseURI': 'http://nishida.lol/wp-json',
     }],
   ]
 }

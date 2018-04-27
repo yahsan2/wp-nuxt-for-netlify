@@ -60,6 +60,10 @@ import TheFooter from '../components/TheFooter'
 import Loader from '~/components/Loader'
 
 export default {
+  async asyncData ({ app, store, params, route }) {
+    console.log('test')
+    // store.commit('setCurrentQuery', query)
+  },
   data () {
     return {
       clipped: false,

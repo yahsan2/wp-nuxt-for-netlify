@@ -4,10 +4,10 @@ import Vuex from 'vuex'
 const store = () => new Vuex.Store({
 
   actions: {
-    async nuxtServerInit ({ commit, state }) {
-      let meta = await this.$api.get('/')
-      commit('setMeta', meta.data)
-    }
+    // async nuxtServerInit ({ commit, state }) {
+    //   let meta = await this.$api.get('/')
+    //   commit('setMeta', meta.data)
+    // }
   },
 
   getters: {
@@ -33,8 +33,8 @@ const store = () => new Vuex.Store({
     cacheCategories: {},
     cacheAuthors: {},
     meta: {
-      description: '',
-      name: ''
+      name: 'にしだけブログ',
+      description: '家族でどう楽しく生きるか模索するブログ'
     }
   },
 
