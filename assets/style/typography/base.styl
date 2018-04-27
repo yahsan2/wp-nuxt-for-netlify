@@ -1,0 +1,102 @@
+////////////////////////
+// Custom Reset CSS
+////////////////////////
+html
+  -webkit-text-size-adjust 100%
+  -ms-text-size-adjust 100%
+  font-size $rem-base - 2px
+  +tablet()
+    font-size $rem-base - 1px
+  +desktop()
+    font-size $rem-base
+  +widescreen()
+    font-size $rem-base
+  +fullhd()
+    font-size $rem-base + 1px
+
+body
+  font-size $fontsize-medium
+  font-family $fontfamily-sansserif
+  font-style normal
+  line-height 2
+  overflow-x hidden
+  width 100%
+  position relative
+
+// common heading
+heading()
+  color $color-heading
+  font-weight bold
+  line-height 1.4
+  letter-spacing .1rem
+  font-feature-settings 'palt'
+  padding-top ($section-gap/2)
+  margin-bottom ($section-gap/2)
+  margin-top 0
+  > span
+    display inline-block
+
+headline_a()
+  &,
+  &:visited,
+  &:focus
+    color $color-heading
+  &:hover
+    color lighten($color-heading, 20%)
+
+h1,h2,h3,h4,h5,h6,
+.e-h1,.e-h2,.e-h3,.e-h4,.e-h5,.e-h6
+  heading()
+  a
+    headline_a()
+
+palt()
+  letter-spacing .05rem
+  font-feature-settings 'palt'
+  text-align justify
+
+p
+  palt()
+  font-size $fontsize-medium
+  color $color-text
+  margin 0
+  &:empty
+    display none
+
+
+a
+  palt()
+  color $color-link
+  text-decoration none
+  letter-spacing .05rem
+  transition all .1s
+  color $color-focus
+  &:visited
+    color $color-visited
+  &:hover
+    color $color-hover
+  &:focus
+    color $color-focus
+
+&::selection
+  color: $color-white
+  background: rgba($color-key , .8)
+
+img
+  max-width 100%
+
+ul, ol
+  margin 0
+  padding 0
+
+// Bold.
+b, strong
+  font-weight bold
+
+// Italic.
+em, i
+  font-style italic
+
+blockquote
+  margin 0
+

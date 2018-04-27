@@ -1,0 +1,317 @@
+////////////////////////
+// Typeset CSS
+////////////////////////
+
+fontline($fontsize=$fontsize-medium, $linescale=2)
+  font-size $fontsize
+  padding-top ($fontsize / 2)
+  margin-bottom $fontsize
+  line-height $fontsize * $linescale
+
+// Heading level 1.
+h1()
+  fontline($fontsize-xxlarge)
+
+// Heading level 2.
+h2()
+  fontline($fontsize-xlarge)
+
+// Heading level 3.
+h3()
+  fontline($fontsize-large)
+
+// Heading level 4.
+h4()
+  fontline($fontsize-medium)
+
+// Heading level 5.
+h5()
+  fontline($fontsize-medium)
+
+// Heading level 6.
+h6()
+  fontline($fontsize-medium)
+
+p()
+  fontline($fontsize-medium)
+
+
+p_a()
+  margin 0 .1em
+  padding 0 .1rem
+  position relative
+  color $color-text
+  text-decoration underline
+  // border-bottom 1px solid $color-link
+  &:hover
+    color $color-link
+
+p_span()
+  margin 0 .1em
+  padding 0 .1rem
+  color $color-text
+
+img()
+  display block
+  height auto
+
+inline-list()
+  margin-left -1 * $column-gap
+  margin-right -1 * $column-gap
+  fontline($fontsize-medium)
+  li
+    display inline-block
+    padding-left $column-gap
+
+list()
+  fontline($fontsize-medium)
+  li
+    margin-left $column-gap
+    ol, ul
+      padding-top ($column-gap / 2)
+      margin-bottom ($column-gap / 2)
+      margin-left $column-gap
+  mobile
+    padding-left $column-gap
+    li
+      margin-left 0
+
+ul()
+  list()
+  list-style disc
+
+ol()
+  list()
+  list-style-type none
+  li
+    counter-increment top-level
+    &:before
+      content counter(top-level) '.'
+      font-feature-settings 'lnum', 'tnum'
+      margin-left -1 * ($column-gap / 2)
+      position absolute
+      text-align right
+      width 2em
+    ul
+      li
+        &:before
+          content ''
+        ol
+          li
+            counter-increment alt-level
+            &:before
+              content counter(alt-level) '.'
+    ol
+      li
+        counter-increment sub-level
+        &:before
+          content counter(top-level) '.' counter(sub-level)
+        ul
+          li
+            &:before
+              content ''
+        ol
+          li
+            counter-increment sub-sub-level
+            &:before
+              content counter(top-level) '.' counter(sub-level) '.' counter(sub-sub-level)
+
+dl()
+  fontline($fontsize-medium)
+  dt, dd
+    margin-left 2rem
+    +mobile
+      margin-left 0
+  dt
+    font-weight bold
+  dd + dt
+    padding-top 1rem
+
+
+table()
+  fontline($fontsize-medium)
+  font-feature-settings 'lnum', 'tnum'
+  width 100%
+  thead
+    th
+      font-weight bold
+      padding-bottom 1px
+
+small()
+  fontline($fontsize-small)
+  display inline-block
+
+caption()
+  fontline($fontsize-small)
+
+blockquote()
+  fontline($fontsize-medium)
+  position relative
+  background $color-lightgray-3
+  border-left 1px solid $color-text
+  margin-top $column-gap * 2
+  padding-top $column-gap * 2
+  padding-right $column-gap * 2
+  padding-left $column-gap * 2
+  padding-bottom $column-gap * 2
+  p
+    fontline($fontsize-medium)
+    font-style italic
+    color lighten($color-text, 15%)
+    &:first-child
+      padding-top 0
+    &:last-child
+      margin-bottom 0
+
+  +mobile
+    margin-left $column-gap
+
+hr()
+  background-image linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%, $color-lightgray 50%)
+  background-position 0 50%
+  background-repeat repeat-x
+  background-size 100% 0.15rem
+  border 0
+  margin 0
+  padding-bottom $section-gap
+  padding-top $section-gap
+
+pre()
+  background-color $color-bg
+  font-family $fontfamily-monospace
+  display block
+  margin-bottom $section-gap
+  padding ($section-gap / 2)
+  white-space pre
+  white-space pre-wrap
+  word-break break-all
+  word-wrap break-word
+
+code()
+  font-size $fontsize-small
+  background-color $color-bg
+  font-family $fontfamily-monospace
+
+upper()
+  font-kerning normal
+  letter-spacing 0.1rem
+  text-transform uppercase
+
+small-caps()
+  font-feature-settings 'smcp'
+  font-kerning normal
+  letter-spacing 0.1rem
+
+lining-numerals()
+  font-feature-settings 'lnum'
+
+oldstyle-numerals()
+  font-feature-settings 'onum'
+
+
+.typeset
+  div
+    max-width 100%
+  img
+    img()
+
+  // Nice underlines for text links.
+  p a, li a
+    p_a()
+
+  // Paragraphs. OpenType ligatures and oldstyle figures enabled if available.
+  p
+    p()
+
+  // Heading level 1.
+  h1
+    h1()
+
+  // Heading level 2.
+  h2
+    h2()
+
+  // Heading level 3.
+  h3
+    h3()
+
+  // Heading level 4.
+  h4
+    h4()
+
+  // Heading level 5.
+  h5
+    h5()
+
+  // Heading level 6.
+  h6
+    h6()
+
+  // Lists.
+  ul
+    ul()
+
+  // Ordered lists.
+  ol
+    ol()
+
+  // Definition lists.
+  dl
+    dl()
+
+  // Tables.
+  table
+    table()
+
+  // Caption and inline small text.
+  small
+    small()
+
+  .inline-list
+    inline-list()
+
+  .wp-caption-text
+    caption()
+
+  // Nice spacing for captions.
+  h1 + .caption,
+  h2 + .caption,
+  h3 + .caption,
+    margin-top (-1 * $section-gap / 2)
+
+  h4 + .caption,
+  h5 + .caption,
+  h6 + .caption
+    margin-top: 0rem
+
+  // Quotes.
+  blockquote
+    blockquote()
+
+  // Horizontal rule.
+  hr
+    hr()
+
+  // Pre block.
+  pre
+    pre()
+
+  // Code block.
+  code
+    code()
+
+  // Letter space those capitals people, Jan Tschichold would be proud.
+  .upper
+    upper()
+
+  // Real small caps.
+  .small-caps
+    small-caps()
+
+  // Consistent height numbers with OpenType.
+  .lining-numerals
+    lining-numerals()
+
+  // Ascending and descending numbers with OpenType.
+  .oldstyle-numerals
+    oldstyle-numerals()

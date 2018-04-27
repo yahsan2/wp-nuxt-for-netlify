@@ -1,0 +1,87 @@
+$primary = #333436
+$accent = #384D66
+$containerWidth = 1440px
+
+$rem-base = 18px
+
+@import '~assets/style/utils/functions'
+
+// ---------------
+// GRID
+// ---------------
+$column-gap = 1.25rem
+$column-max = 60rem
+
+// ---------------
+// SECTION
+// ---------------
+$section-gap = 2rem
+
+// ---------------
+// COLOR
+// ---------------
+$color-white = #fff
+$color-lightgray-3 = #f5f5f5
+$color-lightgray-2 = #eeeeee
+$color-lightgray = #ccc
+$color-gray = #999
+$color-darkgray = #333
+$color-black = #111
+$color-red = #ff605b
+$color-orange = #f0810b
+$color-yellow = #f0810b
+$color-green = #94d045
+$color-blue = #339fdd
+
+$color-key = $color-blue
+$color-primary = $color-blue
+$color-secondary = $color-gray
+
+$color-text    =  $color-darkgray
+$color-subtext =  $color-secondary
+$color-heading =  $color-darkgray
+$color-bg      =  $color-white
+$color-link    =  $color-key
+$color-hover   =  lighten($color-key, 20%)
+$color-visited =  darken($color-key, 10%)
+$color-focus   =  darken($color-key, 10%)
+
+// ---------------
+// font & typography
+// ---------------
+$root-fontsize         =  rem-calc($rem-base)
+$root-fontsize-small   =  $root-fontsize - 2rem
+$root-fontsize-medium  =  $root-fontsize - 1rem
+$root-fontsize-large   =  $root-fontsize
+$root-fontsize-xlarge  =  $root-fontsize + 1rem
+$root-fontsize-xxlarge =  $root-fontsize + 2rem
+
+// As rem against root-fontsize
+$fontsize-xsmall   =  .5rem
+$fontsize-small   =  .75rem
+$fontsize-medium  =  1rem
+$fontsize-large   =  1.4rem
+$fontsize-xlarge  =  1.7rem
+$fontsize-xxlarge =  2rem
+
+$fontfamily-sansserif-ja = "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif
+$fontfamily-serif-ja     = "游明朝", YuMincho, "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif
+$fontfamily-sansserif-en = 'Roboto', sans-serif
+$fontfamily-serif-en     = 'Roboto Slab', serif
+$fontfamily-monospace    = Consolas, "Liberation Mono", Courier, monospace !default
+$fontfamily-sansserif    = $fontfamily-sansserif-ja
+$fontfamily-serif        = $fontfamily-serif-en
+
+$default-lineheight   =  1.8
+$default-marginbottom =  1.5rem
+$default-letterspace  =  0.05rem
+
+// ---------------
+// BREAKPOINT
+// ---------------
+$breakpoint-small  = rem-calc(640)
+$breakpoint-medium = rem-calc(1024)
+$breakpoint-large  = rem-calc(1440)
+$breakpoint-xlarge = rem-calc(1920)
+
+@import '~assets/style/utils/mixins'

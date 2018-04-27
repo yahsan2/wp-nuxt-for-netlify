@@ -1,0 +1,35 @@
+$rem-base ?= 16px
+
+sif($res, $t, $f)
+  return ($res) ? $t : $f
+
+nth($hash, $index)
+  return $hash[$index]
+
+convert-to-rem($value, $base-value = $rem-base)
+  if typeof($value) == 'unit'
+    if unit($value) == ''
+      $value = $value * 1px
+    if unit($value) == 'px'
+      $value = strip-unit($value) / strip-unit($base-value)
+
+      if $value != 0
+        $value = $value * 1rem
+  return $value
+
+rem-calc($values, $base-value = $rem-base)
+  $max = length($values)
+
+  if $max == 1
+    return convert-to-rem(nth($values, 0), $base-value)
+
+  $remValues = ()
+  for $i in (0...$max)
+    push($remValues, convert-to-rem(nth($values, $i), $base-value))
+
+  return $remValues
+
+// STRIP UNIT
+// It strips the unit of measure and returns it
+strip-unit($num)
+  return remove-unit($num)

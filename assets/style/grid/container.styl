@@ -1,0 +1,31 @@
+$column-gap ?= 0.75rem
+$column-max ?= 75rem
+
+.container
+  margin 0 auto
+  padding-left $column-gap
+  padding-right  $column-gap
+  position relative
+  max-width $column-max
+  // +desktop()
+  //   // max-width $breakpoint-large - (2 * $column-gap)
+  //   width $breakpoint-large - (2 * $column-gap)
+  //   &.is-fluid
+  //     margin-left $column-gap
+  //     margin-right $column-gap
+  //     // max-width none
+  //     width auto
+  // +until-widescreen()
+  //   &.is-widescreen
+  //     // max-width $breakpoint-xlarge - (2 * $column-gap)
+  //     width auto
+  // +until-fullhd()
+  //   &.is-fullhd
+  //     // max-width $fullhd - (2 * $column-gap)
+  //     width auto
+  // +widescreen()
+  //   // max-width $breakpoint-xlarge - (2 * $column-gap)
+  //   width $breakpoint-xlarge - (2 * $column-gap)
+  // +fullhd()
+  //   // max-width $breakpoint-xxlarge - (2 * $column-gap)
+  //   width $breakpoint-xxlarge - (2 * $column-gap)

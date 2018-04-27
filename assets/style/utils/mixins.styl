@@ -1,0 +1,111 @@
+clearfix()
+  &:before,
+  &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
+
+cf()
+  clearfix
+
+
+keyframes($name)
+  @-webkit-keyframes {$name}
+    {block}
+  @-moz-keyframes {$name}
+    {block}
+  @-ms-keyframes {$name}
+    {block}
+  @keyframes {$name}
+    {block}
+
+
+gradient($start, $end)
+  background: $start
+  background: -webkit-gradient(linear, left top, left bottom, from($start), to($end))
+  background: -moz-linear-gradient(top, $start, $end)
+  background: -o-linear-gradient($start, $end)
+  background: linear-gradient($start, $end)
+
+media($breakpoint)
+  $range-small   =  0, $breakpoint-small
+  $range-medium  =  $breakpoint-small  + rem-calc(1), $breakpoint-medium
+  $range-large   =  $breakpoint-medium + rem-calc(1), $breakpoint-large
+  $range-xlarge  =  $breakpoint-large  + rem-calc(1), $breakpoint-xlarge
+  $range-xxlarge =  $breakpoint-xlarge + rem-calc(1), rem-calc(99999999)
+
+  if $breakpoint == "landscape"
+    @media only screen and (orientation: landscape)
+      {block}
+  if $breakpoint == "portrait"
+    @media only screen and (orientation: portrait)
+      {block}
+  if $breakpoint == "small-only" or $breakpoint == "mobile"
+    @media only screen and (max-width: $range-small[1])
+      {block}
+  if $breakpoint == "medium-up" or $breakpoint == "tablet"
+    @media only screen and (min-width: $range-medium[0])
+      {block}
+  if $breakpoint == "medium-only"
+    @media only screen and (min-width: $range-medium[0]) and (max-width: $range-medium[1])
+      {block}
+  if $breakpoint == "until-medium" or $breakpoint == "touch" or $breakpoint == "until-desktop"
+    @media only screen and (max-width: $range-medium[1])
+      {block}
+  if $breakpoint == "large-up" or $breakpoint == "desktop"
+    @media only screen and (min-width: $range-large[0])
+      {block}
+  if $breakpoint == "large-only"
+    @media only screen and (min-width: $range-large[0]) and (max-width: $range-large[1])
+      {block}
+  if $breakpoint == "until-large" or $breakpoint == "until-widescreen"
+    @media only screen and (max-width: $range-large[1])
+      {block}
+  if $breakpoint == "xlarge-up" or $breakpoint == "widescreen"
+    @media only screen and (min-width: $range-xlarge[0])
+      {block}
+  if $breakpoint == "xlarge-only"
+    @media only screen and (min-width: $range-xlarge[0]) and (max-width: $range-xlarge[1])
+      {block}
+  if $breakpoint == "until-xlarge" or $breakpoint == "until-fullhd"
+    @media only screen and (max-width: $range-large[1])
+      {block}
+  if $breakpoint == "xxlarge-up" or $breakpoint == "fullhd"
+    @media only screen and (min-width: $range-xxlarge[0])
+      {block}
+
+mobile()
+  +media("mobile")
+    {block}
+
+tablet()
+  +media("tablet")
+    {block}
+
+touch()
+  +media("touch")
+    {block}
+
+desktop()
+  +media("desktop")
+    {block}
+
+widescreen()
+  +media("widescreen")
+    {block}
+
+fullhd()
+  +media("fullhd")
+    {block}
+
+until-widescreen()
+  +media("until-widescreen")
+    {block}
+
+until-fullhd()
+  +media("until-fullhd")
+    {block}
+
+
+
