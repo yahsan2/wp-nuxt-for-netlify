@@ -1,6 +1,7 @@
 const nodeExternals = require('webpack-node-externals')
 const resolve = (dir) => require('path').join(__dirname, dir)
 const axios = require('axios')
+const api_url = 'https://nishida.lol'
 
 module.exports = {
   // mode: 'spa',
@@ -71,8 +72,8 @@ module.exports = {
     interval: 1000,
     routes () {
       return Promise.all([
-        axios.get('http://nishida.lol/wp-json/wp/v2/posts?per_page=100'),
-        axios.get('http://nishida.lol/wp-json/wp/v2/pages?per_page=100')
+        axios.get(`${api_url}/wp-json/wp/v2/posts?per_page=100`),
+        axios.get(`${api_url}/wp-json/wp/v2/pages?per_page=100`)
       ]).then((data) => {
         const posts = data[0]
         const pages = data[1]
@@ -103,7 +104,7 @@ module.exports = {
     }],
     ['~/modules/api', {
       'config': './options/wp.json',
-      'baseURI': 'http://nishida.lol/wp-json',
+      'baseURI': `${api_url}/wp-json`,
     }],
   ]
 }
