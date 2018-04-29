@@ -43,7 +43,7 @@ import ArticleFeaturedImage from '~/components/ArticleFeaturedImage'
 // import ArticleComments from '~/components/ArticleComments'
 
 export default {
-  async asyncData ({ app, store, params, route }) {
+  async asyncData ({ app, store, params, route, payload }) {
     store.commit('setCurrentPath', route.path)
 
     const query = {
@@ -52,7 +52,7 @@ export default {
     }
 
     if (!store.state.cachePosts[params.article]) {
-      const posts = await app.$api.get(`/posts`, query)
+      const posts = payload ? {data: [payload]} : await app.$api.get(`/posts`, query)
       store.commit('setCachePages', {
         path: route.path,
         posts: posts.data

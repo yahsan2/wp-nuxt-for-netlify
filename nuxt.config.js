@@ -77,9 +77,15 @@ module.exports = {
         const posts = data[0]
         const pages = data[1]
         return posts.data.map((post) => {
-          return '/post/' + post.slug
+          return {
+            route: '/post/' + post.slug,
+            payload: post
+          }
         }).concat(pages.data.map((page) => {
-          return page.slug
+          return {
+            route: page.slug,
+            payload: page
+          }
         }))
       })
     }
