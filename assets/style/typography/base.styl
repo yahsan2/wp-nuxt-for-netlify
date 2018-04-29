@@ -4,17 +4,18 @@
 html
   -webkit-text-size-adjust 100%
   -ms-text-size-adjust 100%
-  font-size $rem-base - 2px
+  font-size $root-fontsize-small
   +tablet()
-    font-size $rem-base - 1px
+    font-size $root-fontsize-medium
   +desktop()
-    font-size $rem-base
+    font-size $root-fontsize-large
   +widescreen()
-    font-size $rem-base
+    font-size $root-fontsize-large
   +fullhd()
-    font-size $rem-base + 1px
+    font-size $root-fontsize-xlarge
   *
     box-sizing border-box
+
 body
   font-size $fontsize-medium
   font-family $fontfamily-sansserif

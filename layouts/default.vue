@@ -88,9 +88,6 @@ export default {
         page: 1,
         _embed: 1
       }
-      console.log('this.$store.state.cachePages[route.path]')
-      console.log(this.$store.state.cachePages['/'])
-
       if (!this.$store.state.cachePages['/']) {
         const posts = await this.$api.get('/posts', query)
         this.$store.commit('setCachePages', {
@@ -99,7 +96,6 @@ export default {
         })
         this.$store.commit('setCachePosts', posts.data)
       }
-      console.log(this.$store.state.cachePages['/'])
     }
   },
   mounted () {
