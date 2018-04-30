@@ -74,7 +74,7 @@ module.exports = {
   },
   plugins: [
     { src: '~plugins/vue-lazyload', ssr: false },
-    { src: '~plugins/mixins' },
+    { src: '~plugins/mixins' }
   ],
   modules: [
     '@nuxtjs/axios',
