@@ -1,5 +1,5 @@
 const axios = require('axios')
-const apiUrl = 'https://wp.kmr.io'
+const apiUrl = 'https://nishida.lol'
 
 module.exports = {
   /*
