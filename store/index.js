@@ -66,7 +66,9 @@ const store = () => new Vuex.Store({
           paged: 1
         }
       }
-      state.currentPosts = state.cachePages[data.path].slugs
+    },
+    setCurrentPosts (state, data) {
+      state.currentPosts = state.cachePages[state.currentPath] ? state.cachePages[state.currentPath].slugs : []
     },
     setArticle (state, data) {
       state.article = data

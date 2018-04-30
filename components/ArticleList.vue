@@ -72,6 +72,7 @@ export default {
             posts: response.data
           })
           this.$store.commit('setCachePosts', response.data)
+          this.$store.commit('setCurrentPosts')
           loadingState.loaded()
           this.$forceUpdate()
         })

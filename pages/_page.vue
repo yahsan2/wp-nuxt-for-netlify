@@ -59,6 +59,7 @@ export default {
       })
     }
 
+    store.commit('setCurrentPosts')
     store.commit('setCurrentQuery', query)
   },
 

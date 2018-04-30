@@ -35,6 +35,8 @@ export default {
       })
       store.commit('setCachePosts', posts.data)
     }
+
+    store.commit('setCurrentPosts')
     store.commit('setCurrentQuery', query)
   },
 
