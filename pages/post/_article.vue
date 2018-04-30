@@ -52,7 +52,7 @@ export default {
     }
 
     if (!store.state.cachePosts[params.article]) {
-      const posts = payload ? {data: [payload]} : await app.$api.get(`/posts`, query)
+      const posts = payload ? {data: [app.$api.mapProparty(payload, 'post')]} : await app.$api.get(`/posts`, query)
       store.commit('setCachePages', {
         path: route.path,
         posts: posts.data
