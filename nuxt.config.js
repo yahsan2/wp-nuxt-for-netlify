@@ -1,19 +1,19 @@
 const nodeExternals = require('webpack-node-externals')
 const resolve = (dir) => require('path').join(__dirname, dir)
 const axios = require('axios')
+const package = require('./package.json')
 const api_url = 'https://nishida.lol'
 
 module.exports = {
-  // mode: 'spa',
   /*
   ** Headers of the page
   */
   head: {
-    title: 'wp-nuxt',
+    title: package.name,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js + Vuetify.js project' }
+      { hid: 'description', name: 'description', content: package.description }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -33,18 +33,9 @@ module.exports = {
   */
   build: {
     babel: {
-      // plugins: [
-      //   ["transform-imports", {
-      //     "vuetify": {
-      //       "transform": "vuetify/es5/components/${member}",
-      //       "preventFullImport": true
-      //     }
-      //   }]
-      // ]
     },
     vendor: [
       'moment'
-      // '~/plugins/vuetify.js'
     ],
     extractCSS: true,
     /*
@@ -59,13 +50,6 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-      // if (ctx.isServer) {
-      //   config.externals = [
-      //     nodeExternals({
-      //       whitelist: [/^vuetify/]
-      //     })
-      //   ]
-      // }
     }
   },
   generate: {
@@ -93,9 +77,7 @@ module.exports = {
   },
   plugins: [
     { src: '~plugins/vue-lazyload', ssr: false },
-    // { src: '~plugins/web-font-loader', ssr: false },
     { src: '~plugins/mixins' },
-    // { src: '~plugins/vuetify.js' },
   ],
   modules: [
     '@nuxtjs/axios',
