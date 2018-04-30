@@ -1,5 +1,7 @@
+const siteurlPath = ``
+
 module.exports = {
-  "baseURI": "https://demo.wp-api.org/wp-json",
+  "baseURI": `https://wp.kmr.io/wp-json`,
   "api": {
     "meta": {
       "get": {
@@ -8,62 +10,62 @@ module.exports = {
     },
     "post": {
       "get": {
-        "/posts": "/wp/v2/posts",
-        "/posts/:id": "/wp/v2/posts"
+        "/posts": `${siteurlPath}/v2/posts`,
+        "/posts/:id": `${siteurlPath}/v2/posts`
       },
       "post": {
-        "/posts": "/wp/v2/posts"
+        "/posts": `${siteurlPath}/v2/posts`
       },
       "put": {
-        "/posts/:id": "/wp/v2/posts"
+        "/posts/:id": `${siteurlPath}/v2/posts`
       },
       "delete": {
-        "/posts/:id": "/wp/v2/posts"
+        "/posts/:id": `${siteurlPath}/v2/posts`
       }
     },
     "category": {
       "get": {
-        "/categories": "/wp/v2/categories",
-        "/categories/:id": "/wp/v2/categories"
+        "/categories": `${siteurlPath}/v2/categories`,
+        "/categories/:id": `${siteurlPath}/v2/categories`
       },
       "post": {
-        "/categories": "/wp/v2/categories"
+        "/categories": `${siteurlPath}/v2/categories`
       },
       "put": {
-        "/categories/:id": "/wp/v2/categories"
+        "/categories/:id": `${siteurlPath}/v2/categories`
       },
       "delete": {
-        "/categories/:id": "/wp/v2/categories"
+        "/categories/:id": `${siteurlPath}/v2/categories`
       }
     },
     "page": {
       "get": {
-        "/pages": "/wp/v2/pages",
-        "/pages/:id": "/wp/v2/pages"
+        "/pages": `${siteurlPath}/v2/pages`,
+        "/pages/:id": `${siteurlPath}/v2/pages`
       },
       "post": {
-        "/pages": "/wp/v2/pages"
+        "/pages": `${siteurlPath}/v2/pages`
       },
       "put": {
-        "/pages/:id": "/wp/v2/pages"
+        "/pages/:id": `${siteurlPath}/v2/pages`
       },
       "delete": {
-        "/pages/:id": "/wp/v2/pages"
+        "/pages/:id": `${siteurlPath}/v2/pages`
       }
     },
     "sale": {
       "get": {
-        "/posts": "/wp/v2/posts",
-        "/posts/:id": "/wp/v2/posts"
+        "/posts": `${siteurlPath}/v2/posts`,
+        "/posts/:id": `${siteurlPath}/v2/posts`
       },
       "post": {
-        "/posts": "/wp/v2/posts"
+        "/posts": `${siteurlPath}/v2/posts`
       },
       "put": {
-        "/posts/:id": "/wp/v2/posts"
+        "/posts/:id": `${siteurlPath}/v2/posts`
       },
       "delete": {
-        "/posts/:id": "/wp/v2/posts"
+        "/posts/:id": `${siteurlPath}/v2/posts`
       }
     }
   },

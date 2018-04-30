@@ -1,5 +1,5 @@
 const axios = require('axios')
-const apiUrl = 'https://nishida.lol'
+const apiUrl = 'https://wp.kmr.io'
 
 module.exports = {
   /*
@@ -53,8 +53,8 @@ module.exports = {
     interval: 1000,
     routes () {
       return Promise.all([
-        axios.get(`${apiUrl}/wp-json/wp/v2/posts?per_page=100&page=1&_embed=1`),
-        axios.get(`${apiUrl}/wp-json/wp/v2/pages?per_page=100&page=1&_embed=1`)
+        axios.get(`${apiUrl}/wp-json/wp/posts?per_page=100&page=1&_embed=1`),
+        axios.get(`${apiUrl}/wp-json/wp/pages?per_page=100&page=1&_embed=1`)
       ]).then((data) => {
         const posts = data[0]
         const pages = data[1]
