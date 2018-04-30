@@ -1,7 +1,7 @@
 {
-  "name": "Nishidake-Blog",
+  "name": "wp-nuxt-for-netlify",
   "version": "1.0.0",
-  "description": "Nuxt.js + Vuetify.js project",
+  "description": "Wp + Nuxt + Netlify project",
   "author": "Ryosuke Miyamoto <yahsan2@gmail.com>",
   "private": true,
   "scripts": {

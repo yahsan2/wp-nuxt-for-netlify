@@ -1,9 +1,13 @@
 import Vuex from 'vuex'
-import config from '../package'
 
 const store = () => new Vuex.Store({
   actions: {
-    async nuxtServerInit ({ commit, state }) {
+    async nuxtServerInit ({ commit, state }, { app }) {
+      const description = app.head.meta && app.head.meta.find((meta) => meta.name === 'description')
+      commit('setMeta', {
+        'name': app.head.title,
+        'description': description ? description.content : ''
+      })
     }
   },
 
@@ -30,8 +34,8 @@ const store = () => new Vuex.Store({
     cacheCategories: {},
     cacheAuthors: {},
     meta: {
-      name: config.name,
-      description: config.description
+      name: '',
+      description: ''
     }
   },
 

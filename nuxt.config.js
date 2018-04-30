@@ -1,19 +1,16 @@
-const nodeExternals = require('webpack-node-externals')
-const resolve = (dir) => require('path').join(__dirname, dir)
 const axios = require('axios')
-const package = require('./package.json')
-const api_url = 'https://nishida.lol'
+const apiUrl = 'https://nishida.lol'
 
 module.exports = {
   /*
   ** Headers of the page
   */
   head: {
-    title: package.name,
+    title: 'wp-nuxt-for-netlify',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: package.description }
+      { hid: 'description', name: 'description', content: 'Wp + Nuxt + Netlify project' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -56,8 +53,8 @@ module.exports = {
     interval: 1000,
     routes () {
       return Promise.all([
-        axios.get(`${api_url}/wp-json/wp/v2/posts?per_page=100&page=1&_embed=1`),
-        axios.get(`${api_url}/wp-json/wp/v2/pages?per_page=100&page=1&_embed=1`)
+        axios.get(`${apiUrl}/wp-json/wp/v2/posts?per_page=100&page=1&_embed=1`),
+        axios.get(`${apiUrl}/wp-json/wp/v2/pages?per_page=100&page=1&_embed=1`)
       ]).then((data) => {
         const posts = data[0]
         const pages = data[1]
@@ -86,7 +83,7 @@ module.exports = {
     }],
     ['~/modules/api', {
       'config': '~/api.config.js',
-      'baseURI': `${api_url}/wp-json`,
-    }],
+      'baseURI': `${apiUrl}/wp-json`
+    }]
   ]
 }
