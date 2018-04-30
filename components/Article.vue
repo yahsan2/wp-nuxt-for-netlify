@@ -64,7 +64,7 @@ export default {
   },
   computed: {
     featuredImage () {
-      if (this.article.images) {
+      if (this.article && this.article.images && this.article.images[0]) {
         const featuredImage = this.article.images[0]
         return featuredImage.sizes.large || featuredImage.sizes.full || false
       } else {
