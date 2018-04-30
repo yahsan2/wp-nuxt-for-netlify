@@ -103,7 +103,7 @@ module.exports = {
       id: 'UA-XXXX-XXX'
     }],
     ['~/modules/api', {
-      'config': './options/wp.json',
+      'config': '~/api.config.js',
       'baseURI': `${api_url}/wp-json`,
     }],
   ]

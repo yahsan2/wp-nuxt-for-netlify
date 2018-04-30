@@ -1,4 +1,4 @@
-{
+module.exports = {
   "baseURI": "https://demo.wp-api.org/wp-json",
   "api": {
     "meta": {

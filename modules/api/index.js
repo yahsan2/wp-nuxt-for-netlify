@@ -5,7 +5,7 @@ const axios = require('axios')
 
 module.exports = function Api (_moduleOptions) {
   // Combine options
-  const moduleOptions = (_moduleOptions.config)? Object.assign({}, require( _moduleOptions.config ), _moduleOptions) :  _moduleOptions
+  const moduleOptions = (_moduleOptions.config)? Object.assign({}, require( _moduleOptions.config.replace(/^(@|~)/,process.cwd()) ), _moduleOptions) :  _moduleOptions
   const options = Object.assign({}, this.options.api, moduleOptions)
 
   /* istanbul ignore if */
