@@ -10,11 +10,8 @@
         <div class="header-nav column">
           <nav>
             <ul class="columns is-gapless is-inline is-ended text-right">
-              <li class="column"><nuxt-link to="/about-us" exact>about1</nuxt-link></li>
-              <li class="column"><nuxt-link to="/about" exact>about2</nuxt-link></li>
-              <li class="column"><nuxt-link to="/about" exact>about3</nuxt-link></li>
-              <li class="column"><nuxt-link to="/about" exact>about4</nuxt-link></li>
-              <li class="column"><nuxt-link to="/about" exact>about5</nuxt-link></li>
+              <li class="column"><nuxt-link to="/about" exact>about</nuxt-link></li>
+              <li class="column"><nuxt-link to="/sample-page" exact>sample-page</nuxt-link></li>
             </ul>
           </nav>
         </div>
